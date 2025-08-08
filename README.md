@@ -79,3 +79,8 @@ The app is built with **Gradio** for an interactive UI and **MongoDB Atlas Vecto
   - Summary of fit
   - Detailed criteria table (skill, score, justification)
 
+
+## Watch demo video
+
+(demo.mov)
+
