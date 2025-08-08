@@ -1,0 +1,9 @@
+gradio
+python-dotenv
+pymongo
+langchain==0.3.25
+langchain-google-genai
+langchain-openai
+langchain-mongodb
+langchain-community
+pypdf
