@@ -82,5 +82,7 @@ The app is built with **Gradio** for an interactive UI and **MongoDB Atlas Vecto
 
 ## Watch demo video
 
-(demo.mov)
+
+https://github.com/user-attachments/assets/580a6185-ed78-4c59-83af-113bb4e0ed27
+
 
