@@ -11,16 +11,17 @@ from dotenv import load_dotenv
 from pymongo import MongoClient
 from query_processor import ResumeMatcher
 from resume_ingest import load_and_split_resumes
-from langchain_openai import ChatOpenAI
+from langchain_google_genai import ChatGoogleGenerativeAI
 from langchain_openai import OpenAIEmbeddings
 from langchain_mongodb import MongoDBAtlasVectorSearch
-import ssl
-import pymongo
+
 # ------------------ Load Environment Variables ------------------
 load_dotenv(override=True)
 
 
 openai_api_key = os.environ.get("OPENAI_API_KEY")
+google_api_key = os.environ.get("GOOGLE_API_KEY")
+
 
 
 client = MongoClient(os.getenv("MONGODB_URI"))
@@ -31,9 +32,13 @@ embedding = OpenAIEmbeddings(model="text-embedding-ada-002")
 
 # Ensure the vector store is initialized with the correct collection and embedding model
 vectorstore = MongoDBAtlasVectorSearch(collection=collection, embedding=embedding, index_name="vector_index")
-llm = ChatOpenAI(
-    model="gpt-5",
-    openai_api_key=openai_api_key
+llm = ChatGoogleGenerativeAI(
+    model="gemini-2.0-flash",
+    # google_api_key=google_api_key,
+    temperature=0,
+    max_tokens=None,
+    timeout=None,
+    max_retries=2,
 )
 matcher = ResumeMatcher(vectorstore, llm)
 

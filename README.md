@@ -37,7 +37,7 @@ The app is built with **Gradio** for an interactive UI and **MongoDB Atlas Vecto
 - **Frontend/UI**: [Gradio](https://www.gradio.app/)  
 - **LLM & Embeddings**:  
   - OpenAI `text-embedding-ada-002` for vector generation  
-  - GPT-5 for candidate evaluation  
+  - gemini-2.0-flash for candidate evaluation  
 - **Vector Database**: [MongoDB Atlas Vector Search](https://www.mongodb.com/atlas/vector-search)  
 - **PDF Parsing & Chunking**: `PyPDFLoader` + `RecursiveCharacterTextSplitter` (LangChain)  
 - **Backend Language**: Python 3.13  
@@ -64,7 +64,7 @@ The app is built with **Gradio** for an interactive UI and **MongoDB Atlas Vecto
 
 ### 4. **AI-Powered Evaluation (Bonus Feature)**
 - For each top resume, full text is retrieved.
-- **GPT-5** is prompted to:
+- **gemini-2.0-flash** is prompted to:
   - Identify top 2–3 relevant skills
   - Assign scores out of 10
   - Give justifications
